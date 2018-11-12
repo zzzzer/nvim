@@ -44,7 +44,7 @@ endif
 
 
 "ctrl p plugin 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.nvim/bundle/ctrlp.vim
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|__pycache__|\.yardoc\|\.ropeproject$',

@@ -1,11 +1,11 @@
-set viminfo=%,'50,\"100,n~/.viminfo
+set viminfo=%,'50,\"100,n~/.nviminfo
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " DIRECTORIES AND FILES
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "put swap files in a fixed place
-set dir=~/.vim/swp//
+set dir=~/.nvim/swp//
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
 " "FIXES"
@@ -135,14 +135,14 @@ set backup
 set writebackup
 
 " where to put backup file (don't forget to make a backup directory)
-set backupdir=~/.vim/backup//
+set backupdir=~/.nvim/backup//
 
 " directory is the directory for temp file
-set directory=~/.vim/tmp//
+set directory=~/.nvim/tmp//
 
-let $TMPDIR="~/.vim/tmp"
+let $TMPDIR="~/.nvim/tmp"
 
-set undodir=~/.vim/undodir
+set undodir=~/.nvim/undodir
 set undofile
 
 
@@ -335,7 +335,7 @@ nnoremap <Leader>yd :let @*=expand("%:h")<cr>:echo "Copied file directory to cli
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "vim plug
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.nvim/plugged')
 
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-eunuch' 
@@ -354,7 +354,12 @@ Plug 'kien/ctrlp.vim'
 Plug 'junegunn/fzf.vim' 
 Plug 'gregsexton/gitv' 
 Plug 'haya14busa/incsearch.vim' 
-Plug 'Shougo/neocomplete.vim' 
+"Plug 'Shougo/neocomplete.vim' 
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
 Plug 'scrooloose/nerdcommenter' 
 Plug 'scrooloose/nerdtree' 
 Plug 'fs111/pydoc.vim' 
@@ -392,3 +397,20 @@ call plug#end()
  let g:indentLine_enabled = 0
  let g:verilog_syntax_fold_lst = 'all'
 
+"""""""""""ncm2""""""""""""
+"enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+" IMPORTANTE: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+"suppress the annoying 'match x of y', 'The only match' and 'Pattern not found' messages
+set shortmess+=c
+" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+inoremap <c-c> <ESC>
+" When the <Enter> key is pressed while the popup menu is visible, it only
+" hides the menu. Use this mapping to close the menu and also start a new
+" line.
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"""""""""""end ncm2""""""""""""

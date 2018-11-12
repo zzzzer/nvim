@@ -1,10 +1,10 @@
-so ~/.vim/vimrc.base
-so ~/.vim/vimrc.vimbits
+so ~/.nvim/vimrc.base
+so ~/.nvim/vimrc.vimbits
 
-so ~/.vim/vimrc.neocomplete
-so ~/.vim/vimrc.extended
-so ~/.vim/vimrc.python
-so ~/.vim/vimrc.easymotion_incsearch
+"so ~/.vim/vimrc.neocomplete
+so ~/.nvim/vimrc.extended
+so ~/.nvim/vimrc.python
+so ~/.nvim/vimrc.easymotion_incsearch
 
 set number
 if has('gui_running')
