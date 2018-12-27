@@ -19,4 +19,3 @@
 let g:python_highlight_all = 1
 autocmd FileType python nnoremap <Leader>= :0,$!/home/eashmia/usr/local/bin/yapf<CR>
 autocmd FileType python nnoremap <Leader>i :!/home/eashmia/usr/local/bin/isort %<CR><CR>
-

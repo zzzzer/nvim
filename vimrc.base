@@ -383,6 +383,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'vim-python/python-syntax'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'RRethy/vim-illuminate'
+Plug 'inside/vim-search-pulse'
+Plug 'terryma/vim-smooth-scroll'
+Plug 'luochen1990/rainbow'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 call plug#end()
 "indentline plugin setting
@@ -396,6 +401,19 @@ call plug#end()
  let g:indentLine_bgcolor_gui = '#FF5F00'
  let g:indentLine_enabled = 0
  let g:verilog_syntax_fold_lst = 'all'
+
+ " illuminate vistual 
+ hi link illuminatedWord Visual
+
+ " vim smooth scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 5, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 5, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 5, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
+
+
+"rainbow 
+let g:rainbow_active = 1
 
 """""""""""ncm2""""""""""""
 "enable ncm2 for all buffers
