@@ -19,3 +19,17 @@
 let g:python_highlight_all = 1
 autocmd FileType python nnoremap <Leader>= :0,$!/home/eashmia/usr/local/bin/yapf<CR>
 autocmd FileType python nnoremap <Leader>i :!/home/eashmia/usr/local/bin/isort %<CR><CR>
+let g:black_skip_string_normalization = 1
+"semshi
+"let g:semshi#active
+"let g:semshi#excluded_buffers
+"let g:semshi#excluded_hl_groups
+"let g:semshi#mark_selected_nodes
+"let g:semshi#no_default_builtin_highlight
+"let g:semshi#simplify_markup
+"let g:semshi#error_sign
+"let g:semshi#error_sign_delay
+"let g:semshi#always_update_all_highlights
+"let g:semshi#tolerate_syntax_errors
+"let g:semshi#update_delay_factor
+"let g:semshi#self_to_attribute
